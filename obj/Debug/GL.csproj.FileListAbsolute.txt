@@ -1,0 +1,10 @@
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\bin\Debug\GL.exe.config
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\bin\Debug\GL.exe
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\bin\Debug\GL.pdb
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\obj\Debug\GL.csprojAssemblyReference.cache
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\obj\Debug\GL.Form1.resources
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\obj\Debug\GL.Properties.Resources.resources
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\obj\Debug\GL.csproj.GenerateResource.cache
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\obj\Debug\GL.csproj.CoreCompileInputs.cache
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\obj\Debug\GL.exe
+C:\Users\Kendrick\Desktop\Егор Студент\7 семестр\Моделирование непрерывных систем\GL\obj\Debug\GL.pdb
