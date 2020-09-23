@@ -21,5 +21,16 @@ namespace GL
         {
             this.Close();
         }
+
+        private void ID_CONS_Click(object sender, EventArgs e)
+        {
+            SIZE size = new SIZE();
+            size.ShowDialog();
+            size.Dispose();
+            if(GV.nr > 0)
+            {
+
+            }
+        }
     }
 }
