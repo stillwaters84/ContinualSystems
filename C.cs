@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace GL
 {
-    public partial class R : Form
+    public partial class C : Form
     {
-        public R()
+        public C()
         {
             InitializeComponent();
         }
 
-        private void IDC_NEXTR_BUTTON_Click(object sender, EventArgs e)
+        private void IDC_NEXTС_BUTTON_Click(object sender, EventArgs e)
         {
             //checking valuables
-            var list = new List<int> { int.Parse(m_nextr.Text), int.Parse(m_npr.Text), int.Parse(m_nmr.Text) };
-            foreach(int elem in list)
+            var list = new List<int> { int.Parse(m_nextc.Text), int.Parse(m_npc.Text), int.Parse(m_nmc.Text) };
+            foreach (int elem in list)
             {
                 if (elem < 0)
                 {
@@ -29,7 +29,7 @@ namespace GL
                     return;
                 }
             }
-            if (float.Parse(m_zr.Text) < 0)
+            if (float.Parse(m_zc.Text) < 0)
             {
                 MessageBox.Show("Введены неправильные значения");
                 return;
@@ -38,19 +38,19 @@ namespace GL
             //main program
             else
             {
-                int i = int.Parse(m_nextr.Text);
-                GV.in_r[i, 0] = int.Parse(m_npr.Text);
-                GV.in_r[i, 1] = int.Parse(m_nmr.Text);
-                GV.z_r[i] = float.Parse(m_zr.Text);
-                MessageBox.Show(GV.in_r[i, 0].ToString() + " " + GV.in_r[i, 1].ToString() + " " + GV.z_r[i].ToString());
+                int i = int.Parse(m_nextc.Text);
+                GV.in_c[i, 0] = int.Parse(m_npc.Text);
+                GV.in_c[i, 1] = int.Parse(m_nmc.Text);
+                GV.z_c[i] = float.Parse(m_zc.Text);
+                //MessageBox.Show(GV.in_c[i, 0].ToString() + " " + GV.in_c[i, 1].ToString() + " " + GV.z_c[i].ToString());
                 i++;
-                m_nextr.Text = i.ToString();
+                m_nextc.Text = i.ToString();
                 if (i <= GV.nr)
                 {
-                    m_npr.Text = "0";
-                    m_nmr.Text = "0";
-                    m_zr.Text = "0";
-                    m_npr.Focus();
+                    m_npc.Text = "0";
+                    m_nmc.Text = "0";
+                    m_zc.Text = "0";
+                    m_npc.Focus();
                 }
                 else this.Close();
             }

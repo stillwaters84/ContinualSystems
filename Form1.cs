@@ -29,7 +29,21 @@ namespace GL
             size.Dispose();
             if(GV.nr > 0)
             {
-
+                R ir = new R();
+                ir.ShowDialog(this);
+                ir.Dispose();
+            }
+            if (GV.nc > 0)
+            {
+                C ic = new C();
+                ic.ShowDialog(this);
+                ic.Dispose();
+            }
+            if (GV.nl > 0)
+            {
+                L il = new L();
+                il.ShowDialog(this);
+                il.Dispose();
             }
         }
     }

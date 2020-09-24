@@ -19,7 +19,7 @@ namespace GL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //checking invalid arguments without try-catch
+            //checking invalid arguments without try-catch (working with stuff like "03 or 007")
             var list = new List<int> { int.Parse(NumOfNodes.Text), int.Parse(Resistors.Text), int.Parse(Capasitors.Text), int.Parse(Inductions.Text),
                 int.Parse(ITUN.Text), int.Parse(ITUT.Text), int.Parse(INUN.Text), int.Parse(INUT.Text), int.Parse(BPTransistors.Text), int.Parse(YPTransistors.Text),
                 int.Parse(OA.Text), int.Parse(Transformers.Text), int.Parse(IOA.Text), int.Parse(ITransformers.Text)};
@@ -49,7 +49,8 @@ namespace GL
             GV.tr = list.ElementAt(11);
             GV.ioa = list.ElementAt(12);
             GV.itr = list.ElementAt(13);
-            MessageBox.Show(GV.nv.ToString() + " " + GV.nr.ToString() + " " + GV.nc.ToString() + " " + GV.nl.ToString());
+            
+            //MessageBox.Show(GV.nv.ToString() + " " + GV.nr.ToString() + " " + GV.nc.ToString() + " " + GV.nl.ToString());
             this.Close();
         }
     }
