@@ -91,6 +91,7 @@
             this.ID_FILE.Name = "ID_FILE";
             this.ID_FILE.Size = new System.Drawing.Size(180, 22);
             this.ID_FILE.Text = "Ввод из файла";
+            this.ID_FILE.Click += new System.EventHandler(this.ID_FILE_Click);
             // 
             // ID_RED
             // 
