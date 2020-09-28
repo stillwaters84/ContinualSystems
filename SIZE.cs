@@ -20,10 +20,29 @@ namespace GL
         private void button1_Click(object sender, EventArgs e)
         {
             //checking invalid arguments without try-catch (working with stuff like "03 or 007")
-            var list = new List<int> { int.Parse(NumOfNodes.Text), int.Parse(Resistors.Text), int.Parse(Capasitors.Text), int.Parse(Inductions.Text),
-                int.Parse(ITUN.Text), int.Parse(ITUT.Text), int.Parse(INUN.Text), int.Parse(INUT.Text), int.Parse(BPTransistors.Text), int.Parse(YPTransistors.Text),
-                int.Parse(OA.Text), int.Parse(Transformers.Text), int.Parse(IOA.Text), int.Parse(ITransformers.Text)};
-
+            List<int> list = new List<int>();
+            try
+            {
+                list.Add(int.Parse(NumOfNodes.Text));
+                list.Add(int.Parse(Resistors.Text));
+                list.Add(int.Parse(Capasitors.Text));
+                list.Add(int.Parse(Inductions.Text));
+                list.Add(int.Parse(ITUN.Text));
+                list.Add(int.Parse(ITUT.Text));
+                list.Add(int.Parse(INUN.Text));
+                list.Add(int.Parse(INUT.Text));
+                list.Add(int.Parse(BPTransistors.Text));
+                list.Add(int.Parse(YPTransistors.Text));
+                list.Add(int.Parse(OA.Text));
+                list.Add(int.Parse(Transformers.Text));
+                list.Add(int.Parse(IOA.Text));
+                list.Add(int.Parse(ITransformers.Text));
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Введены неправильные значения");
+                return;
+            }
             foreach (int elem in list)
             {
                 if (elem < 0)
@@ -34,7 +53,6 @@ namespace GL
             }
 
             //main program
-            //yes, deena, i did it like that - change it if you want
             GV.nv = list.ElementAt(0);
             GV.nr = list.ElementAt(1);
             GV.nc = list.ElementAt(2);
