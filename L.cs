@@ -21,7 +21,17 @@ namespace GL
         {
             {
                 //checking valuables
-                var list = new List<int> { int.Parse(m_nextl.Text), int.Parse(m_npl.Text), int.Parse(m_nml.Text) };
+                List<int> list = new List<int>();
+                float check;
+                try
+                {
+                    list = new List<int> { int.Parse(m_nextl.Text), int.Parse(m_npl.Text), int.Parse(m_nml.Text) };
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Введены неправильные значения");
+                    return;
+                }
                 foreach (int elem in list)
                 {
                     if (elem < 0)
@@ -30,7 +40,7 @@ namespace GL
                         return;
                     }
                 }
-                if (float.Parse(m_zl.Text) < 0)
+                if (!float.TryParse(m_zl.Text, out check) || float.Parse(m_zl.Text) < 0)
                 {
                     MessageBox.Show("Введены неправильные значения");
                     return;
@@ -46,7 +56,7 @@ namespace GL
                     //MessageBox.Show(GV.in_l[i, 0].ToString() + " " + GV.in_l[i, 1].ToString() + " " + GV.z_l[i].ToString());
                     i++;
                     m_nextl.Text = i.ToString();
-                    if (i <= GV.nr)
+                    if (i <= GV.nl)
                     {
                         m_npl.Text = "0";
                         m_nml.Text = "0";

@@ -38,7 +38,7 @@ namespace GL
                 list.Add(int.Parse(IOA.Text));
                 list.Add(int.Parse(ITransformers.Text));
             }
-            catch (Exception err)
+            catch (Exception)
             {
                 MessageBox.Show("Введены неправильные значения");
                 return;

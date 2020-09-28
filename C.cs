@@ -20,7 +20,17 @@ namespace GL
         private void IDC_NEXTС_BUTTON_Click(object sender, EventArgs e)
         {
             //checking valuables
-            var list = new List<int> { int.Parse(m_nextc.Text), int.Parse(m_npc.Text), int.Parse(m_nmc.Text) };
+            List<int> list = new List<int>();
+            float check;
+            try
+            {
+                list = new List<int> { int.Parse(m_nextc.Text), int.Parse(m_npc.Text), int.Parse(m_nmc.Text) };
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Введены неправильные значения");
+                return;
+            }
             foreach (int elem in list)
             {
                 if (elem < 0)
@@ -29,7 +39,7 @@ namespace GL
                     return;
                 }
             }
-            if (float.Parse(m_zc.Text) < 0)
+            if (!float.TryParse(m_zc.Text, out check) || float.Parse(m_zc.Text) < 0)
             {
                 MessageBox.Show("Введены неправильные значения");
                 return;
@@ -45,7 +55,7 @@ namespace GL
                 //MessageBox.Show(GV.in_c[i, 0].ToString() + " " + GV.in_c[i, 1].ToString() + " " + GV.z_c[i].ToString());
                 i++;
                 m_nextc.Text = i.ToString();
-                if (i <= GV.nr)
+                if (i <= GV.nc)
                 {
                     m_npc.Text = "0";
                     m_nmc.Text = "0";

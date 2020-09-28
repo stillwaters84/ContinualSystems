@@ -20,7 +20,17 @@ namespace GL
         private void IDC_NEXTR_BUTTON_Click(object sender, EventArgs e)
         {
             //checking valuables
-            var list = new List<int> { int.Parse(m_nextr.Text), int.Parse(m_npr.Text), int.Parse(m_nmr.Text) };
+            List<int> list = new List<int>();
+            float check;
+            try
+            {
+                list = new List<int> { int.Parse(m_nextr.Text), int.Parse(m_npr.Text), int.Parse(m_nmr.Text) };
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Введены неправильные значения");
+                return;
+            }
             foreach(int elem in list)
             {
                 if (elem < 0)
@@ -29,7 +39,7 @@ namespace GL
                     return;
                 }
             }
-            if (float.Parse(m_zr.Text) < 0)
+            if ( !float.TryParse(m_zr.Text, out check) || float.Parse(m_zr.Text) < 0)
             {
                 MessageBox.Show("Введены неправильные значения");
                 return;
@@ -42,7 +52,7 @@ namespace GL
                 GV.in_r[i, 0] = int.Parse(m_npr.Text);
                 GV.in_r[i, 1] = int.Parse(m_nmr.Text);
                 GV.z_r[i] = float.Parse(m_zr.Text);
-                MessageBox.Show(GV.in_r[i, 0].ToString() + " " + GV.in_r[i, 1].ToString() + " " + GV.z_r[i].ToString());
+                //MessageBox.Show(GV.in_r[i, 0].ToString() + " " + GV.in_r[i, 1].ToString() + " " + GV.z_r[i].ToString());
                 i++;
                 m_nextr.Text = i.ToString();
                 if (i <= GV.nr)
