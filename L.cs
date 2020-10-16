@@ -46,7 +46,7 @@ namespace GL
                     //MessageBox.Show(GV.in_l[i, 0].ToString() + " " + GV.in_l[i, 1].ToString() + " " + GV.z_l[i].ToString());
                     i++;
                     m_nextl.Text = i.ToString();
-                    if (i <= GV.nr)
+                    if (i <= GV.nl)
                     {
                         m_npl.Text = "0";
                         m_nml.Text = "0";

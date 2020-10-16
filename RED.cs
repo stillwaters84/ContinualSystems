@@ -156,22 +156,62 @@ namespace GL
         private void IDC_IN_BUTTON_Click(object sender, EventArgs e)
         {
             int idx = m_redlst.SelectedIndex;
+            GV.k = int.Parse(m_n.Text);
             switch (idx)
             {
                 case 0:
-                    GV.in_r[GV.k, 0] = int.Parse(m_np2.Text);
-                    GV.in_r[GV.k, 1] = int.Parse(m_nm2.Text);
-                    GV.z_r[GV.k] = float.Parse(m_z1.Text);
+                    try
+                    {
+                        GV.in_r[GV.k, 0] = int.Parse(m_np2.Text);
+                        GV.in_r[GV.k, 1] = int.Parse(m_nm2.Text);
+                        GV.z_r[GV.k] = float.Parse(m_z1.Text);
+                    }
+                    catch(Exception)
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+                    if ((GV.in_r[GV.k, 0] < 0 )|| (GV.in_r[GV.k, 1] < 0) || (GV.z_r[GV.k] < 0))
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
                     break;
                 case 1:
-                    GV.in_c[GV.k, 0] = int.Parse(m_np2.Text);
-                    GV.in_c[GV.k, 1] = int.Parse(m_nm2.Text);
-                    GV.z_c[GV.k] = float.Parse(m_z1.Text);
+                    try
+                    {
+                        GV.in_c[GV.k, 0] = int.Parse(m_np2.Text);
+                        GV.in_c[GV.k, 1] = int.Parse(m_nm2.Text);
+                        GV.z_c[GV.k] = float.Parse(m_z1.Text);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+                    if ((GV.in_c[GV.k, 0] < 0) || (GV.in_c[GV.k, 1] < 0) || (GV.z_c[GV.k] < 0))
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
                     break;
                 case 2:
-                    GV.in_l[GV.k, 0] = int.Parse(m_np2.Text);
-                    GV.in_l[GV.k, 1] = int.Parse(m_nm2.Text);
-                    GV.z_l[GV.k] = float.Parse(m_z1.Text);
+                    try
+                    {
+                        GV.in_l[GV.k, 0] = int.Parse(m_np2.Text);
+                        GV.in_l[GV.k, 1] = int.Parse(m_nm2.Text);
+                        GV.z_l[GV.k] = float.Parse(m_z1.Text);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+                    if ((GV.in_l[GV.k, 0] < 0) || (GV.in_l[GV.k, 1] < 0) || (GV.z_l[GV.k] < 0))
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
                     break;
             }
             OK.Focus();
