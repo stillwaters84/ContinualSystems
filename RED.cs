@@ -129,7 +129,15 @@ namespace GL
         private void IDC_OUT_BUTTON_Click(object sender, EventArgs e)
         {
             int idx = m_redlst.SelectedIndex;
-            GV.k = int.Parse(m_n.Text);
+            try
+            {
+                GV.k = int.Parse(m_n.Text);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Введены неправильные значения");
+                return;
+            }
             switch (idx)
             {
                 case 0:
