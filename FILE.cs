@@ -86,37 +86,76 @@ namespace GL
             char[] sep = { ' ' };
             string str = "";
             str = fin.ReadLine();
-            String[] s = str.Split(sep, 4);
-            GV.nv = int.Parse(s[0]);
-            GV.nr = int.Parse(s[1]);
-            GV.nc = int.Parse(s[2]);
-            GV.nl = int.Parse(s[3]);
+            String[] s;
 
+
+
+            try
+            {
+                s = str.Split(sep, 4);
+                GV.nv = int.Parse(s[0]);
+                GV.nr = int.Parse(s[1]);
+                GV.nc = int.Parse(s[2]);
+                GV.nl = int.Parse(s[3]);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка в тексте файла");
+                fin.Close();
+                return;
+            }
             for (int i = 1; i <= GV.nr; i++)
             {
                 str = fin.ReadLine();
-                s = str.Split(sep, 3);
-                GV.in_r[i, 0] = int.Parse(s[0]);
-                GV.in_r[i, 1] = int.Parse(s[1]);
-                GV.z_r[i] = float.Parse(s[2]);
+                try
+                {
+                    s = str.Split(sep, 3);
+                    GV.in_r[i, 0] = int.Parse(s[0]);
+                    GV.in_r[i, 1] = int.Parse(s[1]);
+                    GV.z_r[i] = float.Parse(s[2]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка в тексте файла");
+                    fin.Close();
+                    return;
+                }
             }
 
             for (int i = 1; i <= GV.nc; i++)
             {
                 str = fin.ReadLine();
-                s = str.Split(sep, 3);
-                GV.in_c[i, 0] = int.Parse(s[0]);
-                GV.in_c[i, 1] = int.Parse(s[1]);
-                GV.z_c[i] = float.Parse(s[2]);
+                try
+                {
+                    s = str.Split(sep, 3);
+                    GV.in_c[i, 0] = int.Parse(s[0]);
+                    GV.in_c[i, 1] = int.Parse(s[1]);
+                    GV.z_c[i] = float.Parse(s[2]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка в тексте файла");
+                    fin.Close();
+                    return;
+                }
             }
 
             for (int i = 1; i <= GV.nl; i++)
             {
                 str = fin.ReadLine();
-                s = str.Split(sep, 3);
-                GV.in_l[i, 0] = int.Parse(s[0]);
-                GV.in_l[i, 1] = int.Parse(s[1]);
-                GV.z_l[i] = float.Parse(s[2]);
+                try
+                {
+                    s = str.Split(sep, 3);
+                    GV.in_l[i, 0] = int.Parse(s[0]);
+                    GV.in_l[i, 1] = int.Parse(s[1]);
+                    GV.z_l[i] = float.Parse(s[2]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка в тексте файла");
+                    fin.Close();
+                    return;
+                }
             }
             fin.Close();
         }
