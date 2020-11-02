@@ -97,6 +97,7 @@
             this.ID_RED.Name = "ID_RED";
             this.ID_RED.Size = new System.Drawing.Size(181, 22);
             this.ID_RED.Text = "Редактирование";
+            this.ID_RED.Click += new System.EventHandler(this.ID_RED_Click);
             // 
             // директивыРасчётаToolStripMenuItem
             // 
