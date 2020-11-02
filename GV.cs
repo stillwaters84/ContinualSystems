@@ -16,5 +16,6 @@ namespace GL
         public static float[] z_c = new float[MR + 1];
         public static int[,] in_l = new int[MR + 1, 2];
         public static float[] z_l = new float[MR + 1];
+        public static String filename;
     }
 }

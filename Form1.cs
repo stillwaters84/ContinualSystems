@@ -27,7 +27,7 @@ namespace GL
             SIZE size = new SIZE();
             size.ShowDialog();
             size.Dispose();
-            if(GV.nr > 0)
+            if (GV.nr > 0)
             {
                 R ir = new R();
                 ir.ShowDialog(this);
@@ -45,6 +45,15 @@ namespace GL
                 il.ShowDialog(this);
                 il.Dispose();
             }
+            DialogResult res = MessageBox.Show("Выводить описание схемы в файл?",
+                                               "Вывод в файл", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                FILE ofile = new FILE();
+                GV.k = 0;
+                ofile.ShowDialog(this);
+                ofile.Dispose();
+            }
         }
 
         private void ID_RED_Click(object sender, EventArgs e)
@@ -52,6 +61,22 @@ namespace GL
             RED red = new RED();
             red.ShowDialog(this);
             red.Dispose();
+        }
+
+        private void ID_FILE_Click(object sender, EventArgs e)
+        {
+            GV.k = 1;
+            FILE file = new FILE();
+            try
+            {
+                file.ShowDialog(this);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return;
+            }
+            file.Dispose();
         }
     }
 }
