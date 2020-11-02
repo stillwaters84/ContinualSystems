@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.описаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.описаниеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_CONS = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_FILE = new System.Windows.Forms.ToolStripMenuItem();
             this.ID_RED = new System.Windows.Forms.ToolStripMenuItem();
             this.директивыРасчётаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ID_F = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +43,6 @@
             this.ID_SYS = new System.Windows.Forms.ToolStripMenuItem();
             this.ID_INTERNET = new System.Windows.Forms.ToolStripMenuItem();
             this.ID_EXIT = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_CONS = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_FILE = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,19 @@
             this.описаниеToolStripMenuItem1.Name = "описаниеToolStripMenuItem1";
             this.описаниеToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
             this.описаниеToolStripMenuItem1.Text = "Описание";
+            // 
+            // ID_CONS
+            // 
+            this.ID_CONS.Name = "ID_CONS";
+            this.ID_CONS.Size = new System.Drawing.Size(180, 22);
+            this.ID_CONS.Text = "Ввод с клавиатуры";
+            this.ID_CONS.Click += new System.EventHandler(this.ID_CONS_Click);
+            // 
+            // ID_FILE
+            // 
+            this.ID_FILE.Name = "ID_FILE";
+            this.ID_FILE.Size = new System.Drawing.Size(180, 22);
+            this.ID_FILE.Text = "Ввод из файла";
             // 
             // ID_RED
             // 
@@ -145,18 +158,6 @@
             this.ID_EXIT.Size = new System.Drawing.Size(181, 22);
             this.ID_EXIT.Text = "Выход";
             this.ID_EXIT.Click += new System.EventHandler(this.ID_EXIT_Click);
-            // 
-            // ID_CONS
-            // 
-            this.ID_CONS.Name = "ID_CONS";
-            this.ID_CONS.Size = new System.Drawing.Size(180, 22);
-            this.ID_CONS.Text = "Ввод с клавиатуры";
-            // 
-            // ID_FILE
-            // 
-            this.ID_FILE.Name = "ID_FILE";
-            this.ID_FILE.Size = new System.Drawing.Size(180, 22);
-            this.ID_FILE.Text = "Ввод из файла";
             // 
             // Form1
             // 
