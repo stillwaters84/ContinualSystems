@@ -54,7 +54,7 @@ namespace GL
             StreamWriter fout = new StreamWriter(GV.filename);
             String str = "";
             int i;
-            str = GV.nv.ToString() + " " + GV.nr.ToString();
+            str = GV.nv.ToString() + " " + GV.nr.ToString() + " " +  GV.nc.ToString() + " " + GV.nl.ToString();
             fout.WriteLine(str);
             //for R-elements
             for (i = 1; i <= GV.nr; i++)
