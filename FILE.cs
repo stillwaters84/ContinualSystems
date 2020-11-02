@@ -36,7 +36,8 @@ namespace GL
                 case 1:
                     GV.filename = m_file.Text;
                     try
-                    { 
+                    {
+                        MessageBox.Show("Элементы в первой строке файла вводятся по такому порядку: Узлы, Резисторы, Конденсаторы, Катушки");
                         filein(GV.filename);
                     }
                     catch (Exception err)
@@ -80,16 +81,12 @@ namespace GL
         }
 
         private void filein(String filename) 
-
         {
             StreamReader fin = new StreamReader(GV.filename);
             char[] sep = { ' ' };
             string str = "";
             str = fin.ReadLine();
             String[] s;
-
-
-
             try
             {
                 s = str.Split(sep, 4);
@@ -100,7 +97,7 @@ namespace GL
             }
             catch (Exception)
             {
-                MessageBox.Show("Ошибка в тексте файла");
+                MessageBox.Show("Ошибка в количестве элементов. Если какие-то элементы не присутствуют в схеме, то введите в первую строку файла значение 0");
                 fin.Close();
                 return;
             }
@@ -116,7 +113,7 @@ namespace GL
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ошибка в тексте файла");
+                    MessageBox.Show("Ошибка в введённых резисторах");
                     fin.Close();
                     return;
                 }
@@ -134,7 +131,7 @@ namespace GL
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ошибка в тексте файла");
+                    MessageBox.Show("Ошибка в введённых конденсаторах");
                     fin.Close();
                     return;
                 }
@@ -152,11 +149,12 @@ namespace GL
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ошибка в тексте файла");
+                    MessageBox.Show("Ошибка в введённых катушках");
                     fin.Close();
                     return;
                 }
             }
+            MessageBox.Show("Значения успешно введены");
             fin.Close();
         }
     }
