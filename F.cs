@@ -49,38 +49,45 @@ namespace GL
         {
             float fmin, fmax, df, kk;
             int kf;
-            switch (m_f)
+            try
             {
-                case 0:
-                    GV.f[1] = float.Parse(IDC_F1.Text);
-                    GV.nf = 1;
-                    break;
-                case 1:
-                    fmin = GV.f[1] = float.Parse(IDC_F1.Text);
-                    fmax = float.Parse(IDC_F2.Text);
-                    df = float.Parse(IDC_F3.Text);
-                    kf = 1;
-                    while (GV.f[kf] < fmax)
-                    {
-                        GV.f[kf + 1] = GV.f[kf] + df;
-                        kf = kf + 1;
-                    }
-                    GV.nf = kf;
-                    break;
-                case 2:
-                    GV.f[1] = float.Parse(IDC_F1.Text);
-                    fmax = float.Parse(IDC_F2.Text);
-                    kk = float.Parse(IDC_F3.Text);
-                    kf = 1;
-                    while (GV.f[kf] < fmax)
-                    {
-                        GV.f[kf + 1] = kk * GV.f[kf];
-                        kf = kf + 1;
-                    }
-                    GV.nf = kf;
-                    break;
+                switch (m_f)
+                {
+                    case 0:
+                        GV.f[1] = float.Parse(IDC_F1.Text);
+                        GV.nf = 1;
+                        break;
+                    case 1:
+                        fmin = GV.f[1] = float.Parse(IDC_F1.Text);
+                        fmax = float.Parse(IDC_F2.Text);
+                        df = float.Parse(IDC_F3.Text);
+                        kf = 1;
+                        while (GV.f[kf] < fmax)
+                        {
+                            GV.f[kf + 1] = GV.f[kf] + df;
+                            kf = kf + 1;
+                        }
+                        GV.nf = kf;
+                        break;
+                    case 2:
+                        GV.f[1] = float.Parse(IDC_F1.Text);
+                        fmax = float.Parse(IDC_F2.Text);
+                        kk = float.Parse(IDC_F3.Text);
+                        kf = 1;
+                        while (GV.f[kf] < fmax)
+                        {
+                            GV.f[kf + 1] = kk * GV.f[kf];
+                            kf = kf + 1;
+                        }
+                        GV.nf = kf;
+                        break;
+                }
+                this.Close();
             }
-            this.Close();
+            catch (Exception)
+            {
+                MessageBox.Show("Строка имела неверный формат");
+            }
         }
     }
 }
