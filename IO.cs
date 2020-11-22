@@ -26,11 +26,6 @@ namespace GL
                 GV.kp = Int32.Parse(m_kp.Text);
                 GV.km = Int32.Parse(m_km.Text);
 
-                if (GV.lp < 0 || GV.lm < 0 || GV.kp < 0 || GV.km < 0)
-                {
-                    throw new ArgumentException();
-                }
-                
                 this.Close();
             }
             catch (Exception)
