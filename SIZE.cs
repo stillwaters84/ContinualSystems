@@ -10,6 +10,23 @@ using System.Windows.Forms;
 
 namespace GL
 {
+    enum size
+    {
+        NumOfNodes, 
+        Resistors, 
+        Capasitors, 
+        Inductions, 
+        ITUN, 
+        ITUT, 
+        INUN, 
+        INUT, 
+        BPTransistors, 
+        YPTransistors,
+        OA,
+        Transformers, 
+        IOA, 
+        ITransformers
+    }
     public partial class SIZE : Form
     {
         public SIZE()
@@ -38,7 +55,7 @@ namespace GL
                 list.Add(int.Parse(IOA.Text));
                 list.Add(int.Parse(ITransformers.Text));
             }
-            catch (Exception)
+            catch (Exception err)
             {
                 MessageBox.Show("Введены неправильные значения");
                 return;
